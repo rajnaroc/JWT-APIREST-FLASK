@@ -13,7 +13,7 @@ def validar_token(token,output=False):
         if output:
             return decode(token,key=getenv('SECRET'), algorithms=["HS256"])
         
-        decode(token,key=getenv('SECRET'), algorithms='hs256')
+        decode(token,key=getenv('SECRET'), algorithms=['HS256'])
     except exceptions.DecodeError:
         reponse = jsonify({'message': 'Invalid Token'})
         reponse.status_code = 404
